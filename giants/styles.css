@@ -1,0 +1,61 @@
+h1{
+	padding:5px;
+	border:2px solid orange;
+	width: 100%;
+	
+}
+
+footer{
+	display: inline-block;
+	text-align: center;
+	background-image:url("sfg.jpg");
+	width: 100%;
+}
+
+a:hover{
+	color: gray;
+}
+
+a:visited{
+	color:orange;
+
+}
+body{
+	background-color: gray;
+	font-size: 20px;
+	color:orange;
+	width: 100%;
+	}
+
+#new_pitchers{
+	color:black;
+	font-size: 25px;
+	font-variant: small-caps;
+}
+
+#please_visit{
+	color:black;
+	font-family: sans-serif;
+	font-size: 15px;
+	width: 100%;
+}
+
+.pitcher_list{
+	font-variant: small-caps;
+}
+
+img{
+	width:100%;
+}
+
+@media screen and (max-width: 500px) {
+  body,h1,footer{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    width:40%;
+  }
+}

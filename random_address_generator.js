@@ -13,4 +13,4 @@ array5 = []
    5. postal code
 2. Your script should randomly select one item from each of these arrays and then use them to construct a random address
 3. Each time you run the script, it should print a new randomly-generated address to the console. 
-4. For example: 1139 Grand Ave, Chicago, IL 60642*/
+4. For example: 1139 Grand Ave, Chicago, IL 60642*/l

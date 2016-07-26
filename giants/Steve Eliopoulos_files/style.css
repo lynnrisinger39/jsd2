@@ -1,18 +1,5 @@
 * {
-  font-variant: small-caps;
-}
-
-#homework {
-  margin:auto;
-  text-align: center;
-  margin-top: 100px;
-}
-
-#steve {
-margin:auto;
-text-align: center;
-margin-top: 50px;
-color: #ffa500;
+    margin:auto;
 }
 
 body {
@@ -74,31 +61,20 @@ a:active {
 h1 {
 	font-size: 25;
 	font-family: serif;
-	color: orange;
-  text-shadow:
-  -2px -2px 0 #000,  
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-  margin-bottom: 10px;
+	color: black;
 }
 h2 {
-	 
-  }
+	font-size: 12;
+	font-family: sans-serif;
+}
 h3 {
 	font-size: 12;
 	font-family: sans-serif;
-  margin: auto;
-  color: orange;
-  font-size: 12;
-  text-align: center;
-  margin-top: 50px;
-  padding-right: 100px;
-  position: absolute;
 
 }
 h4 {
-	
+	color: orange;
+	font-size: 12;
 }
 
 #mvps{

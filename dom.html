@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1> DOM Tree</h1>
+<div><p>8-bit YOLO direct trade plaid chillwave lo-fi. Freegan yr brooklyn health goth, single-origin coffee chartreuse sriracha everyday carry twee squid irony man braid ramps hella. Pinterest XOXO direct trade, tousled bicycle rights deep v chillwave normcore butcher. Crucifix forage tacos, fixie farm-to-table ethical venmo single-origin coffee direct trade. Keytar franzen taxidermy waistcoat, cronut beard iPhone aesthetic. Bushwick cold-pressed deep v, everyday carry godard wolf narwhal squid pour-over food truck quinoa try-hard artisan aesthetic master cleanse. Slow-carb kinfolk bicycle rights distillery craft beer.
+</p>
+</div>
+<ul id="menu">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+<style>
+div p{
+	color:blue;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+var div = document.querySelector("div")
+var p = document.querySelector("div p")
+p.innerHTML = "Foosball"
+function newString(string){
+p.innerHTML = string;
+return p;
+}
+
+var $div = $("div");
+var $p = $("div p");
+
+function updateWithJQuery(text) {
+	console.log('updateWithJQuery');
+	$p.html(text);
+}
+// ADDING ELEMENTS TO DOM
+
+var menu = document.querySelector("menu");
+
+//
+
+	function addToDOM(newText) {
+		//
+	console.log('addToDOM', newText);
+	// STEP 1 - create new elements
+
+	var li = document.createElement("li")
+
+	// STEP 2 - add content
+	li.innerHTML = newText
+	// STEP 3 - append new element to dom
+	menu.appendChild(li)
+
+
+}
+</script>
+
+</body>
+</html>

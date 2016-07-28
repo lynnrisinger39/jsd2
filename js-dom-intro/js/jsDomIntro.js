@@ -16,14 +16,17 @@ form.addEventListener('submit', createNewThing);
 // Event Listeners
 // ------------------------------------------
 function createNewThing(e) {
-	e.preventDefault();
-	console.log('createNewThing');
-	var newThing = input.value
-	console.log(newThing);
-	addToList(newThing);
+	if (input.value !== '') {
+		e.preventDefault();
+		console.log('createNewThing');
+		var newThing = input.value
+		console.log(newThing);
+		addToList(newThing);
+
+	}else {
+		window.alert("you must type in a value!");
+	}
 	form.reset()
-
-
 	}
 
 

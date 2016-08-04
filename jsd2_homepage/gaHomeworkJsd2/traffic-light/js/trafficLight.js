@@ -15,17 +15,34 @@ var trafficLight = document.querySelector('#traffic-light');
 // Events
 // ----------------------------------------------
 
-stopLight.addEventListener('click',redLight,false);
-/*slowButton.addEventListener('click', yellowLight, false);
-goButton.addEventListener('click',goLight,false);
-// Event handlers*/
+stopButton.addEventListener('click',redLight);
+slowButton.addEventListener('click', yellowLight);
+goButton.addEventListener('click',goLight);
+caution.addEventListener('click', cautionLight)
+// Event handlers
 // ----------------------------------------------
 
 function redLight(e){
-	trafficLight.classList.add('stop');
+	trafficLight.classList.toggle('stop');
 	trafficLight.classList.remove('go');
 	trafficLight.classList.remove('slow');
-/*	clearInterval(cautionLight);
+/*	console.log("hi")
 */};
 
+function yellowLight(e){
+	trafficLight.classList.toggle('slow');
+	trafficLight.classList.remove('go','stop');
+};
 
+function goLight(e){
+	trafficLight.classList.toggle('go');
+	trafficLight.classList.remove('stop','slow');
+
+};
+
+var cautionFlash = setInterval(cautionLight, 500);
+
+function cautionLight(e){
+	clearInterval(cautionLight);
+	trafficLight.classList.toggle('slow');
+};

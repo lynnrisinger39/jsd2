@@ -42,8 +42,8 @@ function getDetails(event){
 
 function jData(event) {
 	results.innerHTML = ' ';
-/*	posterImage.src = '';
-*/	console.log(event);
+	posterImage.src = '';
+	console.log(event);
 	event.Search.forEach(movieSearchResults);
 }
 

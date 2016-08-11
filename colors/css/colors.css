@@ -1,0 +1,21 @@
+body {
+	color: navy;
+	font-size: 80px;
+	padding: 50px;
+
+}
+
+.li{
+	margin:50px;
+}
+.olive {
+	background-color: olive;
+}
+
+.peru {
+	background-color: peru;
+}
+
+.red {
+	background-color: red;
+}

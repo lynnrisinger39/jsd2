@@ -18,10 +18,18 @@
       <nav>
         <ul>
           <li><a href="#">News Source: <span>Source Name</span></a>
-            <ul>
-                <li><a href="#">Source 1</a></li>
-                <li><a href="#">Source 2</a></li>
-                <li><a href="#">Source 3</a></li>
+            <ul cass='newsSources'>
+
+            <script type="text/x-handlebars-template" id="news-source-template">
+                {{#each this}}
+                <li><a href="#">{{name}}</a></li>
+                {{/each}}
+              </script>
+
+
+                <li><a href="#">ESPN</a></li>
+                <li><a href="#">Google News</a></li>
+                <li><a href="#">Reddit News</a></li>
             </ul>
           </li>
         </ul>
@@ -97,9 +105,12 @@
       <div class="clearfix"></div>
     </article>
   </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
+
+
   <script id="template" type="text/x-handlebars-template">
-  <p>Author:{{author}} Title:{{title}</p>
+  {{#each this}}
+  <p class='article-info'>Author:{{author}} Title:{{title}</p>
   <p class="description">Description {{description}}</p>
 </script>
 

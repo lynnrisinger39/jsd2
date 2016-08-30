@@ -7,23 +7,26 @@ var h3 = document.querySelector('h3');
 var h6 = document.querySelector('h6');
 var image = document.querySelector('img');
 var template = document.querySelector('.template');
+var results = document.querySelector('results');
+var popUp = document.querySelector('#popUp');
+var main = document.querySelector('#main');
 
-/*
+
 var sources = [
-{
-name: 'ESPN',
-code: 'espn',
-},
-{
-name: 'GOOGLE NEWS',
-code: 'google-news'
-},
-{
-name: 'REDDIT',
-code: 'reddit-r-all'
-}
+	{
+		name: 'ESPN',
+		code: 'espn',
+	},
+	{
+		name: 'GOOGLE NEWS',
+		code: 'google-news'
+	},
+	{
+		name: 'REDDIT',
+		code: 'reddit-r-all'
+	}
 
-]*/
+];
 
 search.addEventListener('submit',getJSON);
 
@@ -32,9 +35,9 @@ search.addEventListener('submit',getJSON);
 
 }*/
 
-function getJSON(code){
-
-	var url = "https://newsapi.org/v1/articles?source=" + code + "&apiKey=dfc17d42054f4e498aaac5b3d331a3ab";
+function getJSON(sourceCode){
+	sourceCode.preventDefault();
+	var url = "https://newsapi.org/v1/articles?source=" + sourceCode + "&apiKey=dfc17d42054f4e498aaac5b3d331a3ab";
 	
 	$.getJSON(url, renderResults);
 
@@ -43,8 +46,12 @@ function getJSON(code){
 function renderResults(json){
 	console.log('renderResults');
 	console.log(json);
-	var template = Handlebars.compile(template.innerHTML);
 
+	results.innerHTML = '';
+
+	var template = Handlebars.compile(template.innerHTML);
+	var articleURL = template(json.articles);
+	results.innerHTML = template(json.articles)
 }
 
 /*function renderArticle(){
@@ -52,5 +59,5 @@ function renderResults(json){
 $('search').submit(function(){)
 
 }*/
-
+newsSources.addEventListener('click',renderResults)
 

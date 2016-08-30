@@ -52,6 +52,9 @@ function renderResults(json){
 	var template = Handlebars.compile(template.innerHTML);
 	var articleURL = template(json.articles);
 	results.innerHTML = template(json.articles)
+
+//run function to display
+	displayArticles();
 }
 
 /*function renderArticle(){

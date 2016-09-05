@@ -8,14 +8,17 @@ var title = document.querySelector('.title');
 var plot = document.querySelector('.plot');
 var form = document.querySelector('form');
 var OMDbAPI = "https://www.omdbapi.com/?s=" + search.value;
-
+var rating = document.querySelector('.imdb-link');
 // Structure
 // ----------------------------------------------
 
 
 // Events
 // ----------------------------------------------
-form.addEventListener('submit',movieInfo)
+form.addEventListener('submit',movieInfo);
+results.addEventListener('click', details);
+
+
 
 var li = document.querySelectorAll("li");
 	li.forEach(function(i) {
@@ -24,6 +27,16 @@ var li = document.querySelectorAll("li");
 /*results.addEventListener('click', movieDetails)
 */// Event handlers
 // ----------------------------------------------
+
+function searchForMovie(e){
+	e.preventDefault();
+
+	var movie = search.value;
+	var url = "https://www.omdbapi.com/?s=" + movie;
+	$.getJSON(url, searchResults);s
+}
+
+
 function movieInfo(event){
 	event.preventDefault();
 	console.log(event);

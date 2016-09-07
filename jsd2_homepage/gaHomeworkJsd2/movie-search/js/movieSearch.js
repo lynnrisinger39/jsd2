@@ -28,14 +28,14 @@ var li = document.querySelectorAll("li");
 */// Event handlers
 // ----------------------------------------------
 
-function searchForMovie(e){
+/*function searchForMovie(e){
 	e.preventDefault();
 
 	var movie = search.value;
 	var url = "https://www.omdbapi.com/?s=" + movie;
-	$.getJSON(url, searchResults);s
+	$.getJSON(url, searchResults);
 }
-
+*/
 
 function movieInfo(event){
 	event.preventDefault();
@@ -45,17 +45,17 @@ function movieInfo(event){
 
 function getDetails(event){
 	event.preventDefault();
-	$.getJSON(OMDbAPI, getDetails)
+	$.getJSON(OMDbAPI, movieSearchResults)
 	OMDbAPI = "https://www.omdbapi.com/?i=" + event.currentTarget.id;
 
 	// clear old
 	poster.innerHTML = '';
-	details.innerHTML = '';
+	movieSearchResults.innerHTML = '';
 }
 
 function jData(event) {
 	results.innerHTML = ' ';
-	posterImage.src = '';
+	posterImage.src = ' ';
 	console.log(event);
 	event.Search.forEach(movieSearchResults);
 }

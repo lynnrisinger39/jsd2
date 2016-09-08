@@ -6,13 +6,15 @@ var options = {
     timeout: 2700
 };
 
+var geoMarker;
+
 
 // Structure
 // ------------------------------------------
 var button    = document.querySelector('main button');
 var locations = document.querySelector('main .locations');
 var error     = document.querySelector('main .error');
-
+var element = document.querySelector('main .map');
 
 // Events
 // ------------------------------------------
@@ -21,50 +23,61 @@ button.addEventListener('click', clickButton);
 
 // Event Handlers
 // ------------------------------------------
-function clickButton(initMap) {
-	console.log('getLocation', initMap);
-	function initMap(){
-		getLocation();
-	}
-}
+if ("geolocation" in navigator) {
 
+function clickButton(initMap) {
+	console.log('geoSuccess', initMap);
+	navigator.geolocation.watchPosition(geoSuccess, geoError, options);
+	};
+
+	function geoError(positionError) {
+	error.innerHTML = 'Error: Unable to retrieve your location. ' +  positionError.code + ': ' + positionError.message;
+};
 
 // Geolocation callback functions
 // ------------------------------------------
-function getLocation(){
-	var el = document.querySelector('#geolocation-map');
-
-	var options = {
-		center: { lat: 36.7783, lng: -119.4179 },
-		zoom: 5
-	};
-
-	var map = new google.maps.Map(el, options);
-
-	navigator.geolocation.getCurrentPosition(updateLocation);
+function geoSuccess(position){
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	
+	listLocation(latitude.toFixed(4),longitude.toFixed(4));
+	placeMarker(latitude,longitude);
+}
 
 
 
 // Update page functions
 // ------------------------------------------
-function updateLocation(position) {
-		console.log("updateLocation", position);
-// LAT AND LONG.
+function updateLocation(latitude, longitude) {
+		var li = document.createElement('li');
+	li.innerHTML = latitude + ' , ' + longitude;
+	locations.appendChild(li);
+};
 
-var latitude = position.coords.latitude;
-var longitude = position.coords.longitude;
-
-map.setCenter( { lat: latitude, lng: longitude } ); 
-		map.setZoom(17);
-	}
-}
 
 
 // Callback when Google Maps has loaded
 // ------------------------------------------
 
-
+function initMap() {
+	var map = new google.maps.Map(element, {
+		center: {lat: 37.790841, lng: -122.40128},
+		zoom: 5
+	});
+};
 
 
 // Add / update the location marker
 // ------------------------------------------
+
+
+function putMarker(latitude,longitude) {
+	if (marker){
+		marker.setMap(null);
+	};
+
+	marker - new google.maps.Marker({
+		map:map,
+		position: {lat:latitude, lng:longitude}
+	});
+};

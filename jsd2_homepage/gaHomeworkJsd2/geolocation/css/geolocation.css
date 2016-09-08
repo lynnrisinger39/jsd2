@@ -33,6 +33,11 @@ main .locations {
 }
 
 
+main .map {
+	width: 50%;
+	min-height: 50%;
+}
+
 /* Button styles
 ---------------------------------------------- */
 main button {

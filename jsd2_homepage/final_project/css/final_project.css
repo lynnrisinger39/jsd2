@@ -5,8 +5,8 @@ body {
 	height: 100%;
 }
 body {
-	color: #2A0C0A;
-	background: linear-gradient(to bottom, #649173 0%, #DBD5A4 45%, #DBD5A4 100%);
+	color: orange;
+	background: black;
 	font-family: "Montserrat", sans-serif;
 	font-size: 16px;
 }
@@ -36,6 +36,8 @@ main .locations {
 main .map {
 	width: 50%;
 	min-height: 500px;
+	margin-left:auto; 
+	margin-right:auto;
 }
 
 /* Button styles

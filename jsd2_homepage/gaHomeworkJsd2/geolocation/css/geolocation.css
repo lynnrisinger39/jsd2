@@ -35,7 +35,7 @@ main .locations {
 
 main .map {
 	width: 50%;
-	min-height: 50%;
+	min-height: 500px;
 }
 
 /* Button styles

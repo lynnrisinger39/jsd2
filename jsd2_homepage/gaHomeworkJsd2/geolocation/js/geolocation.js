@@ -76,7 +76,7 @@ function putMarker(latitude,longitude) {
 		marker.setMap(null);
 	};
 
-	marker - new google.maps.Marker({
+	marker = new google.maps.Marker({
 		map:map,
 		position: {lat:latitude, lng:longitude}
 	});

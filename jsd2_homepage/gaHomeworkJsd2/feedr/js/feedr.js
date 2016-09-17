@@ -10,7 +10,7 @@ var template = document.querySelector('.template');
 var results = document.querySelector('results');
 var popUp = document.querySelector('#popUp');
 var main = document.querySelector('#main');
-
+var newsSources = document.querySelector('.newsSources')
 
 var sources = [
 	{
@@ -57,10 +57,10 @@ function renderResults(json){
 	displayArticles();
 }
 
-/*function renderArticle(){
+function renderArticle(){
 
 $('search').submit(function(){)
 
-}*/
+}
 newsSources.addEventListener('click',renderResults)
 

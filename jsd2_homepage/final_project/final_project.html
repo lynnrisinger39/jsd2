@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
     <title>Final Project</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
@@ -13,23 +15,45 @@
 <body>
 
 <main>
+
     <header>
-        <h1>Final Project</h1>
+        <h1>Steve's Baseball Daily Action
+
+        <br>Final Project</h1>
     </header>
 
     <section>
         <button>
-            <span>Get Current Position</span>
-            <i>➤</i>
-        </button><div class="map" id="google-map"></div>
-        <p class="error"></p>
-        <div class="map"></div>
-        <ul class="locations"></ul>
+            <span>Get Current Games</span>
+        </button>
     </section>
+        <div id="todaysGamesContainer">
+            <script type="text/x-handlebars-template" id="gamesTemplate">
+
+            <p>
+                <strong>Away Team: {{AwayTeam}} Odds -- {{AwayTeamOdds}}</strong> 
+            </p>
+
+            <p>
+                <strong>Away Team: {{AwayTeamLineup}} Lineup -- {{AwayTeamLineup}}</strong> 
+            </p>
+
+            <p>
+                <strong>Home Team: {{HomeTeamLineup}} Lineup -- {{HomeTeamLineup}}</strong> 
+            </p>
+
+            <p>
+                <strong>Home Team:  {{HomeTeam}} Odds -- {{HomeTeamOdds}}</strong>
+            </p>
+
+
+            </script>
+        </div>
 </main>
+    
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="js/final-project-todays-games.js"></script>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxked12r3cSN8vz5fZJ0aTlfNyiVl1T10&callback=initMap" async defer></script>
-<script src="js/final_project.js"></script>
 </body>
 </html>

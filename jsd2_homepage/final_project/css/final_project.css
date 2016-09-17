@@ -5,8 +5,8 @@ body {
 	height: 100%;
 }
 body {
-	color: orange;
-	background: black;
+	color: red;
+	background: grey;
 	font-family: "Montserrat", sans-serif;
 	font-size: 16px;
 }
@@ -15,16 +15,16 @@ body {
 /* Main section
 ---------------------------------------------- */
 main {
-	max-width: 550px;
+	max-width: 100%;
 	margin: auto;
 	padding-bottom: 150px;
 }
 main header {
 	padding: 8px 24px;
-	border-bottom: 2px solid #467A58;
+	border-bottom: 2px solid blue;
 }
 main header h1 {
-	color: #2B5E3C;
+	color: red;
 	text-align: center;
 }
 main .locations {
@@ -40,6 +40,14 @@ main .map {
 	margin-right:auto;
 }
 
+
+
+.news {
+	width: 50%;
+	min-height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
 /* Button styles
 ---------------------------------------------- */
 main button {
@@ -47,7 +55,7 @@ main button {
 	align-items: center;
 	margin: 18px auto;
 	padding: 6px 10px;
-	color: #4a351c;
+	color: red;
 	background: #C6A889;
 	border: 1px solid #EBD5BD;
 	border-radius: 2px;
@@ -57,7 +65,8 @@ main button {
 	outline: none;
 }
 main button:hover {
-	background: #EBD5BD;
+	background: blue;
+	font-size: 20;
 }
 main button:focus {
 	border: 1px solid #FFF3E7;
@@ -66,15 +75,12 @@ main button:focus {
 main button:active {
 	background: #FFF3E7;
 }
-main button i {
-	margin: 0 -1px 0 4px;
-	transform: rotate(-45deg) translateX(3px);
-}
+
 
 
 /* Errors section
 ---------------------------------------------- */
-main .error {
+/*main .error {
 	margin: 12px auto;
 	padding: 8px 12px;
 	color: #80463B;
@@ -86,3 +92,57 @@ main .error {
 main .error:empty {
 	display: none;
 }
+*//* Weather layer on map section 
+------------------------------------------------*/
+
+html, body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map-canvas {
+      width: 70%;
+      height: 70%;
+    }
+    .gm-style-iw {
+      text-align: center;
+    }
+
+  /*  BASEBALL GAME LIST SECTION
+  ------------------------------------------- */
+
+  .games {
+  	display: flex;
+	align-items: center;
+	margin: 18px auto;
+	padding: 6px 10px;
+	color: #4a351c;
+	background: #C6A889;
+	border: 1px solid #EBD5BD;
+	border-radius: 2px;
+	font-size: 18px;
+	transition: all 150ms ease;
+	cursor: pointer;
+	outline: none;
+  }
+
+  .todaysGames{
+  	 width: 70%;
+     height: 70%;
+     margin: 10px;
+     padding: 10px;
+
+  }
+  #todaysGames-container{
+  	 width: 70%;
+     height: 70%;
+     margin: 10px;
+     padding: 10px;
+  }
+  .todaysGames-container{
+   width: 70%;
+     height: 70%;
+     margin: 10px;
+     padding: 10px;
+ }

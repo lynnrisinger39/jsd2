@@ -28,7 +28,9 @@ if ("geolocation" in navigator) {
 
 function clickButton(initMap) {
 	navigator.geolocation.watchPosition(geoSuccess, geoError, options)
-	};
+	};map.setCenter( { lat: latitude, lng: longitude } ); 
+    map.setZoom(17);
+	
 
 	function geoError(positionError) {
 	error.innerHTML = 'Error: Unable to retrieve your location. ' +  positionError.code + ': ' + positionError.message;
@@ -50,16 +52,7 @@ function geoSuccess(position){
 
 // Update page functions
 // ------------------------------------------
-function updateLocation(latitude, longitude) {
-	console.log('updateLocation',latitude,longitude);
 
-	var li = document.createElement('li');
-	li.innerHTML = latitude + ' , ' + longitude;
-	locations.appendChild(li);
-
-
-	placeMarker(latitude,longitude);
-};
 
 
 
@@ -71,6 +64,16 @@ function initMap() {
 		center: {lat: 37.790841, lng: -122.40128},
 		zoom: 12
 	});
+	function updateLocation(latitude, longitude) {
+	console.log('updateLocation',latitude,longitude);
+
+	var li = document.createElement('li');
+	li.innerHTML = latitude + ' , ' + longitude;
+	locations.appendChild(li);
+
+
+	placeMarker(latitude,longitude);
+};
 };
 
 
@@ -90,4 +93,7 @@ function placeMarker(latitude,longitude) {
 		map:map,
 		position: {lat:latitude, lng:longitude}
 	});
+	map.setCenter( { lat: latitude, lng: longitude } ); 
+    map.setZoom(17);
+
 };

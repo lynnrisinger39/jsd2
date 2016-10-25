@@ -83,7 +83,7 @@ google.maps.event.addListener(map, 'idle', checkIfDataRequested);
    // Make the weather request
   var getWeather = function(northLat, eastLng, southLat, westLng) {
     gettingData = true;
-    var requestString = "http://api.openweathermap.org/data/2.5/box/city?bbox="
+    var requestString = "https://api.openweathermap.org/data/2.5/box/city?bbox="
                         + westLng + "," + northLat + "," //left top
                         + eastLng + "," + southLat + "," //right bottom
                         + map.getZoom()

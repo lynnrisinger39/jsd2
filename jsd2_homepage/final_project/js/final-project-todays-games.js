@@ -23,10 +23,11 @@ function getTodaysGames(e){
             
         },
         success: function (game){
-					var source = $(gamesTemplate).html();
+					var source = $("#gamesTemplate").html();
+					debugger; 
 					var gameTemplate = Handlebars.compile(source);
 					var newHTML = gameTemplate(game);
-
+					
 					//grabbing the games container div and then appending the new HTML to it
 					$("#todaysGamesContainer").append(newHTML);
 
